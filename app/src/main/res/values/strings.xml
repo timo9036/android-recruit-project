@@ -3,4 +3,6 @@
     <string name="countdown">倒數13天</string>
     <string name="progress">100%</string>
     <string name="title">百元課程來啦</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

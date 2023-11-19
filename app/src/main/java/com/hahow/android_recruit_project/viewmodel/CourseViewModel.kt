@@ -4,11 +4,11 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.hahow.android_recruit_project.data.DataLoader
+import com.hahow.android_recruit_project.data.CourseRepository
 import com.hahow.android_recruit_project.model.Course
 import kotlinx.coroutines.launch
 
-class CourseViewModel (private val dataLoader: DataLoader) : ViewModel() {
+class CourseViewModel(private val courseRepository: CourseRepository) : ViewModel() {
 
     private var _courses = MutableLiveData<List<Course>>()
     val courses: LiveData<List<Course>>
@@ -19,7 +19,7 @@ class CourseViewModel (private val dataLoader: DataLoader) : ViewModel() {
     }
 
     private fun loadCourses() = viewModelScope.launch {
-        val data = dataLoader.loadCourses()
+        val data = courseRepository.remoteDataSource()
         _courses.value = data
     }
 

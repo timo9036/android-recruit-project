@@ -8,10 +8,10 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.hahow.android_recruit_project.adapter.CourseAdapter
+import com.hahow.android_recruit_project.data.CourseRepository
 import com.hahow.android_recruit_project.data.JsonFileDataLoader
 import com.hahow.android_recruit_project.factory.ViewModelFactory
 import com.hahow.android_recruit_project.viewmodel.CourseViewModel
-import `in`.hahow.android_recruit_project.R
 import `in`.hahow.android_recruit_project.databinding.FragmentCourseBinding
 
 class CourseFragment : Fragment() {
@@ -20,10 +20,6 @@ class CourseFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var courseAdapter: CourseAdapter
-
-    companion object {
-        fun newInstance() = CourseFragment()
-    }
 
     private lateinit var viewModel: CourseViewModel
 
@@ -41,9 +37,10 @@ class CourseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val dataLoader = JsonFileDataLoader(requireContext(), "data.json")
+        val courseRepository = CourseRepository(dataLoader)
+        val viewModelFactory = ViewModelFactory(courseRepository)
 
-        viewModel =
-            ViewModelProvider(this, ViewModelFactory(dataLoader)).get(CourseViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(CourseViewModel::class.java)
 
         viewModel.courses.observe(viewLifecycleOwner) { courses ->
             courseAdapter.submitList(courses)

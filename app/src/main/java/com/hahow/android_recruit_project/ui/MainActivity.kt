@@ -1,4 +1,4 @@
-package com.hahow.android_recruit_project
+package com.hahow.android_recruit_project.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

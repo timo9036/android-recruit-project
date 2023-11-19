@@ -1,4 +1,4 @@
-package com.hahow.android_recruit_project
+package com.hahow.android_recruit_project.model
 
 data class CourseData(
     val data: List<Course>

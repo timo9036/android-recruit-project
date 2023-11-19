@@ -8,7 +8,7 @@ android {
 
     defaultConfig {
         applicationId "in.hahow.android_recruit_project"
-        minSdk 21
+        minSdk 23
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -28,6 +28,11 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+        freeCompilerArgs += "-Xjvm-default=all"
+    }
+
+    buildFeatures {
+        viewBinding true
     }
 }
 
@@ -43,4 +48,11 @@ dependencies {
     // Navigation Component
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.0'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.0'
+
+    //gson
+    implementation 'com.google.code.gson:gson:2.10.1'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
 }

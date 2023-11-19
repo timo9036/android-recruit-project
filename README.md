@@ -10,7 +10,7 @@ Used RecyclerView to display UI
 Implemented Resposity and set DataLoader as a remote data source, decoupling the code, able to extend such as adding Room as a local data source.
 ![architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
 
-### 3. Library
+### 3. Libraries Used for this Project
 - Gson
 - Glide
 - Navigation Component

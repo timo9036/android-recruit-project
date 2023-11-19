@@ -1,3 +1,21 @@
+# Hahow Recruit Project
+
+### 1. Created UI According to Spec
+Used RecyclerView to display UI
+
+#### UI Preview
+![UI Preview](previews/screenshot.jpg)
+
+### 2. Implement MVVM Architecture
+Implemented Resposity and set DataLoader as a remote data source, decoupling the code, able to extend such as adding Room as a local data source.
+![architecture](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
+
+### 3. Library
+- Gson
+- Glide
+- Navigation Component
+
+---
 
 請使用 Kotlin 實作一個 app 首頁課程列表畫面，並寫文件或註解來解釋你的設計考量。除了指定需求外，你可以自由設計 model 和 UI 來提供更好的體驗。
 
